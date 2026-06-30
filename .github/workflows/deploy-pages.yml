@@ -17,14 +17,13 @@ jobs:
 
       - name: Prepare publish directory
         run: |
-          mkdir publish
+          mkdir -p publish
           cp index.html publish/
-          cp .nojekyll publish/
-          for f in *.css *.js; do
-            [ -f "$f" ] && cp "$f" publish/
-          done
+          cp .nojekyll publish/ || touch publish/.nojekyll
+          shopt -s nullglob
+          for f in *.css *.js; do cp "$f" publish/; done
           for d in css js images assets; do
-            [ -d "$d" ] && cp -r "$d" publish/
+            if [ -d "$d" ]; then cp -r "$d" publish/; fi
           done
 
       - name: Deploy to gh-pages branch
