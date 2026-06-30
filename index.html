@@ -1,85 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Course — 2nd Lesson</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<html lang="zh-HK">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Course 分享 — Perplexity 獵頭應用</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,500;0,600;1,500&family=Noto+Sans+TC:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="top-bar">
+        <div class="progress-track">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <div class="scene-dots" id="sceneDots"></div>
+      </header>
 
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      line-height: 1.6;
-      color: #1a1a2e;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-    }
+      <main class="slide" id="slide">
+        <section class="avatar-panel" id="avatarPanel"></section>
+        <section class="content-panel">
+          <div class="narration-card">
+            <p class="narration-label">旁白</p>
+            <p class="narration-text" id="narrationText"></p>
+          </div>
+          <div class="visual-area" id="visualArea"></div>
+        </section>
+      </main>
 
-    main {
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-      max-width: 720px;
-      width: 100%;
-      padding: 3rem;
-    }
-
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-      color: #667eea;
-    }
-
-    .subtitle {
-      color: #666;
-      margin-bottom: 2rem;
-      font-size: 1.1rem;
-    }
-
-    .content {
-      margin-bottom: 2rem;
-    }
-
-    .content p {
-      margin-bottom: 1rem;
-    }
-
-    footer {
-      border-top: 1px solid #eee;
-      padding-top: 1.5rem;
-      font-size: 0.875rem;
-      color: #888;
-    }
-  </style>
-</head>
-<body>
-  <main>
-    <h1>AI Course — 2nd Lesson</h1>
-    <p class="subtitle">Welcome to the lesson page</p>
-
-    <div class="content">
-      <p>
-        Replace this page with your own content. Add your HTML, CSS, and JavaScript
-        files to this repository and push to the <code>main</code> branch — GitHub Pages
-        will automatically publish the updated site.
-      </p>
-      <p>
-        Your site will be available at:
-        <strong>https://chrislsm12-hash.github.io/AI-Course---2nd-Lesson/</strong>
-      </p>
+      <footer class="nav-bar">
+        <button type="button" class="nav-btn" id="prevBtn" aria-label="上一幕">← 上一幕</button>
+        <span class="scene-counter" id="sceneCounter">1 / 6</span>
+        <button type="button" class="nav-btn nav-btn-primary" id="nextBtn" aria-label="下一幕">下一幕 →</button>
+      </footer>
     </div>
 
-    <footer>
-      Published with GitHub Pages
-    </footer>
-  </main>
-</body>
+    <script src="js/scenes.js"></script>
+    <script src="js/app.js"></script>
+  </body>
 </html>
