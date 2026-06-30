@@ -37,11 +37,13 @@ If you built your page in Cursor locally, copy your files into this repository:
 
 Make sure asset paths are **relative** (e.g. `./style.css`, not `/style.css`) so they work correctly on GitHub Pages.
 
-## First-time setup
+## First-time setup (one step)
 
-After merging the GitHub Pages workflow, enable Pages in your repo settings:
+GitHub Pages must be turned on once in your repository settings:
 
-1. Go to **Settings → Pages**
-2. Under **Build and deployment**, set **Source** to **GitHub Actions**
+1. Open **Settings → Pages** on GitHub
+2. Under **Build and deployment**, set **Source** to **Deploy from a branch**
+3. Choose branch **`gh-pages`**, folder **`/ (root)`**
+4. Click **Save**
 
-The workflow will handle the rest on the next push to `main`.
+After the first push to `main`, the workflow creates the `gh-pages` branch automatically. Future pushes redeploy the site within about a minute.
